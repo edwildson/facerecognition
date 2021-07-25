@@ -43,7 +43,7 @@
         </form>
 
 
-        {% if upload and not results.count  == -1  %}
+        {% if upload and results.count %}
         <br><br>
 
         <div class="row">
@@ -100,7 +100,7 @@
                     </tr>
     
                 </table>
-            {% elif count==-1 %}
+            {% elif upload %}
               <h5 class="display-11" align="center">Rosto(s) não identificado(s)</h5>
             {% endif %}
             
