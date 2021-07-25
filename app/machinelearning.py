@@ -78,5 +78,6 @@ def pipeline_model(path):
                 
                 
                 
-            
+    if count == 0:
+      count = -1        
     return machinlearning_results
