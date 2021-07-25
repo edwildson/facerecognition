@@ -37,10 +37,11 @@ def pipeline_model(path):
                                  emotion_name = [],
                                  emotion_name_score = [],
                                  count = [])
-    count = 1
+    count = 0
     if len(detections) > 0:
         for i , confidence in enumerate(detections[0,0,:,2]):
             if confidence > 0.5:
+                count += 1
                 box = detections[0,0,i,3:7]*np.array([w,h,w,h])
                 startx,starty,endx,endy = box.astype(int)
 
@@ -75,7 +76,7 @@ def pipeline_model(path):
                 machinlearning_results['emotion_name'].append(emotion_name)
                 machinlearning_results['emotion_name_score'].append(emotion_score)
                 
-                count += 1
+                
                 
             
     return machinlearning_results

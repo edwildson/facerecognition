@@ -24,9 +24,9 @@ def index(request):
             filepath = os.path.join(settings.MEDIA_ROOT,fileroot)
             results = pipeline_model(filepath)
             print(results)
-
+            
 
             return render(request,'index.html',{'form':form,'upload':True,'results':results})
 
 
-    return render(request,'index.html',{'form':form,'uplaod':False})
+    return render(request,'index.html',{'form':form,'upload':False})
